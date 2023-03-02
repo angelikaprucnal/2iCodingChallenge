@@ -1,0 +1,33 @@
+function removeDuplicatesAndSortDescending(numbers) {
+  /**
+   * Removes duplicates from an array of numbers and sorts them in descending order.
+   *
+   * @param {Array} numbers - An array of 10 numbers ranging between 1 and 100.
+   * @returns {Array} - A new array of unique numbers in descending order.
+   */
+
+  // Ensure that the input is an array
+  if (!Array.isArray(numbers)) {
+    throw new Error('Input must be an array.');
+  }
+
+  // Ensure that the array has 10 numbers
+  if (numbers.length !== 10) {
+    throw new Error('Array must contain exactly 10 numbers.');
+  }
+
+  // Ensure that all numbers are between 1 and 100
+  if (!numbers.every(num => num >= 1 && num <= 100)) {
+    throw new Error('All numbers must be between 1 and 100.');
+  }
+
+  // Remove duplicates and sort in descending order
+  const uniqueNumbers = [...new Set(numbers)].sort((a, b) => b - a);
+
+  return uniqueNumbers;
+}
+ /** Assumptions:
+* The input is always an array of 10 numbers.
+* All numbers in the input array are between 1 and 100 (inclusive).
+* I've named the function removeDuplicatesAndSortDescending to accurately describe its functionality. I've also included comments to explain what the function does, what the expected inputs and outputs are, and why certain checks are necessary.
+*/
